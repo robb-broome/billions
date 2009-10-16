@@ -4,7 +4,7 @@
 set :application, "playlist"
 
 set :scm, "git"
-
+set :deploy_via, :remote_cache
 set :repository, "git://github.com/robb-broome/billions.git"
 
 
@@ -12,15 +12,15 @@ set :repository, "git://github.com/robb-broome/billions.git"
 # NOTE: for some reason Capistrano requires you to have both the public and
 # the private key in the same folder, the public key should have the 
 # extension ".pub".
-ssh_options[:keys] = ["#{ENV['HOME']}/.ec2/ec2-keypair"]
+ssh_options[:keys] = ["#{ENV['HOME']}/.ec2/ec2-keypair-amz"]
 
 # Your EC2 instances. Use the ec2-xxx....amazonaws.com hostname, not
 # any other name (in case you have your own DNS alias) or it won't
 # be able to resolve to the internal IP address.
-role :web,      "ec2-174-129-57-246.compute-1.amazonaws.com"
-role :app,      "ec2-174-129-57-246.compute-1.amazonaws.com"
-role :db,       "ec2-174-129-57-246.compute-1.amazonaws.com", :primary => true
-role :memcache, "ec2-174-129-57-246.compute-1.amazonaws.com"
+role :web,      "ec2-75-101-187-193.compute-1.amazonaws.com"
+role :app,      "ec2-75-101-187-193.compute-1.amazonaws.com"
+role :db,       "ec2-75-101-187-193.compute-1.amazonaws.com", :primary => true
+role :memcache, "ec2-75-101-187-193.compute-1.amazonaws.com"
 
 # Whatever you set here will be taken set as the default RAILS_ENV value
 # on the server. Your app and your hourly/daily/weekly/monthly scripts
@@ -57,7 +57,7 @@ set :ec2onrails_config, {
   # particular version is desired "gemname -v 1.0.1"
   # If you don't want to install extra rubygems then remove this
   # :rubygems => ["rmagick", "rfacebook -v 0.9.7"],
-  :rubygems => ["nkallen-cache-money", ""],
+  :rubygems => ["nkallen-cache-money","data_fabric","memcache-client"],
   
   # Set the server timezone. run "cap -e ec2onrails:server:set_timezone" for 
   # details
@@ -70,7 +70,7 @@ set :ec2onrails_config, {
   # server's filesystem. 
   # If you don't need to deploy customized config files to the server then
   # remove this.
-  :server_config_files_root => "../server_config",
+  # :server_config_files_root => "../server_config",
   
   # If config files are deployed, some services might need to be restarted.
   # If you don't need to deploy customized config files to the server then
