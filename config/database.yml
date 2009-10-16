@@ -44,6 +44,6 @@ production:
   database: playlist_production
   pool: 5
   username: playlist
-  password: 
+  password: test1234
   host: db_primary
   socket: /tmp/mysql.sock
