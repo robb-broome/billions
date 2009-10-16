@@ -12,8 +12,8 @@ class SvcPlaylist
         items = rand(100) + 50
         for i in 1..items
           p.playlist_items << PlaylistItem.new(:item_id => rand(100000000), :item_type_id => 1, :position => i)
+          p.save
         end 
-        p.save
         [200, {"Content-Type" => "text/html"}, [p.to_json]]
     else
       [404, {"Content-Type" => "text/html"}, ["Not Found"]]
