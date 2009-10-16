@@ -5,7 +5,7 @@ class SvcPlaylist
   def self.call(env)
     if env["PATH_INFO"] =~ /^\/playlist/
       p = Playlist.all().first
-      [200, {"Content-Type" => "text/json"}, [p.to_json]]
+      [200, {"Content-Type" => "text/html"}, [p.to_json]]
     else
       [404, {"Content-Type" => "text/html"}, ["Not Found"]]
     end
