@@ -8,6 +8,8 @@ set :deploy_via, :remote_cache
 set :repository, "git://github.com/robb-broome/billions.git"
 
 
+# tell me i'm passenger !
+
 
 # NOTE: for some reason Capistrano requires you to have both the public and
 # the private key in the same folder, the public key should have the 
@@ -17,6 +19,7 @@ ssh_options[:keys] = ["#{ENV['HOME']}/.ec2/ec2-keypair-amz"]
 # Your EC2 instances. Use the ec2-xxx....amazonaws.com hostname, not
 # any other name (in case you have your own DNS alias) or it won't
 # be able to resolve to the internal IP address.
+
 role :web,      "ec2-75-101-187-193.compute-1.amazonaws.com"
 role :app,      "ec2-75-101-187-193.compute-1.amazonaws.com"
 role :db,       "ec2-75-101-187-193.compute-1.amazonaws.com", :primary => true
@@ -25,7 +28,6 @@ role :memcache, "ec2-75-101-187-193.compute-1.amazonaws.com"
 # Whatever you set here will be taken set as the default RAILS_ENV value
 # on the server. Your app and your hourly/daily/weekly/monthly scripts
 # will run with RAILS_ENV set to this value.
-set :rails_env, "production"
 
 # EC2 on Rails config. 
 # NOTE: Some of these should be omitted if not needed.
