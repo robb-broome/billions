@@ -9,11 +9,11 @@ class SvcPlaylist
     elsif env["PATH_INFO"] =~ /^\/make/
         n = rand(100000000000)
         p = Playlist.new(:title => "playlist load " + n.to_s, :user_id => rand(10000), :description => "Created at " + Time.now.to_s)
-        items = rand(100) + 50
+        items = rand(5) + 1
         for i in 1..items
           p.playlist_items << PlaylistItem.new(:item_id => rand(100000000), :item_type_id => 1, :position => i)
-          p.save
         end 
+        p.save
         [200, {"Content-Type" => "text/html"}, ['done']]
     else
       [404, {"Content-Type" => "text/html"}, ["Not Found"]]
