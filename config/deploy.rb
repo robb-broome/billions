@@ -28,6 +28,7 @@ role :memcache, "ec2-75-101-187-193.compute-1.amazonaws.com"
 # Whatever you set here will be taken set as the default RAILS_ENV value
 # on the server. Your app and your hourly/daily/weekly/monthly scripts
 # will run with RAILS_ENV set to this value.
+set :rails_env, "production"
 
 # EC2 on Rails config. 
 # NOTE: Some of these should be omitted if not needed.
@@ -90,3 +91,12 @@ set :ec2onrails_config, {
   # /etc/ssl/private/default.key (see :server_config_files_root).
   :enable_ssl => true
 }
+
+namespace :passenger do
+  desc "Restart Application"
+  task :restart do
+    run "touch #{current_path}/tmp/restart.txt"
+  end
+end
+
+after :deploy, "passenger:restart"
