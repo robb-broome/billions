@@ -3,7 +3,7 @@ require(File.dirname(__FILE__) + "/../../config/environment") unless defined?(Ra
 
 class SvcPlaylist
   def self.call(env)
-    if env["PATH_INFO"] =~ /^\/svc_playlist/
+    if env["PATH_INFO"] =~ /^\/playlist/
       p = Playlist.all().first
       [200, {"Content-Type" => "application/json"}, [p.to_json]]
     else
