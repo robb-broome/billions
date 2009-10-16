@@ -5,7 +5,7 @@ class SvcPlaylist
   def self.call(env)
     if env["PATH_INFO"] =~ /^\/playlist/
       p = Playlist.all().first
-      [200, {"Content-Type" => "text/htmlG"}, [p.to_json]]
+      [200, {"Content-Type" => "text/html"}, [p.to_json]]
     elsif env["PATH_INFO"] =~ /^\/test/
       [200, {"Content-Type" => "text/html"}, ['tested']]
     elsif env["PATH_INFO"] =~ /^\/make/
