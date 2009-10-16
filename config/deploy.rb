@@ -22,7 +22,7 @@ ssh_options[:keys] = ["#{ENV['HOME']}/.ec2/ec2-keypair-amz"]
 
 role :web,      "ec2-75-101-187-193.compute-1.amazonaws.com"
 role :app,      "ec2-75-101-187-193.compute-1.amazonaws.com"
-role :db,       "ec2-75-101-187-193.compute-1.amazonaws.com", :primary => true
+role :db,       "ec2-67-202-47-64.compute-1.amazonaws.com", :primary => true
 role :memcache, "ec2-75-101-187-193.compute-1.amazonaws.com"
 
 # Whatever you set here will be taken set as the default RAILS_ENV value
