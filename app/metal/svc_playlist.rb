@@ -14,7 +14,7 @@ class SvcPlaylist
           p.playlist_items << PlaylistItem.new(:item_id => rand(100000000), :item_type_id => 1, :position => i)
           p.save
         end 
-        [200, {"Content-Type" => "text/html"}, [p.to_json]]
+        [200, {"Content-Type" => "text/html"}, ['done']]
     else
       [404, {"Content-Type" => "text/html"}, ["Not Found"]]
     end
