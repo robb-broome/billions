@@ -46,4 +46,4 @@ production:
   username: playlist
   password: test1234
   host: db_primary
-  socket: /tmp/mysql.sock
+  port: 3306
