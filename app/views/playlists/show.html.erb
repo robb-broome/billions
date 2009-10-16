@@ -1,0 +1,33 @@
+<p>
+  <b>Title:</b>
+  <%=h @playlist.title %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @playlist.description %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%=h @playlist.user_id %>
+</p>
+
+<p>
+  <b>Favorite count:</b>
+  <%=h @playlist.favorite_count %>
+</p>
+
+<p>
+  <b>Flags:</b>
+  <%=h @playlist.flags %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%=h @playlist.status %>
+</p>
+
+
+<%= link_to 'Edit', edit_playlist_path(@playlist) %> |
+<%= link_to 'Back', playlists_path %>
