@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  title: MyString
+  description: MyString
+  user_id: 1
+  favorite_count: 1
+  flags: 1
+  status: false
+
+two:
+  title: MyString
+  description: MyString
+  user_id: 1
+  favorite_count: 1
+  flags: 1
+  status: false

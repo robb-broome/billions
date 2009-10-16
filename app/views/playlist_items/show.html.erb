@@ -1,0 +1,18 @@
+<p>
+  <b>Item:</b>
+  <%=h @playlist_item.item_id %>
+</p>
+
+<p>
+  <b>Item type:</b>
+  <%=h @playlist_item.item_type_id %>
+</p>
+
+<p>
+  <b>Position:</b>
+  <%=h @playlist_item.position %>
+</p>
+
+
+<%= link_to 'Edit', edit_playlist_item_path(@playlist_item) %> |
+<%= link_to 'Back', playlist_items_path %>
