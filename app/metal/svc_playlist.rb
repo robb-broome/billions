@@ -9,7 +9,7 @@ class SvcPlaylist
     elsif env["PATH_INFO"] =~ /^\/make/
         n = rand(100000000000)
         p = Playlist.new(:title => "playlist load " + n.to_s, :user_id => rand(10000), :description => "Created at " + Time.now.to_s)
-        items = rand(20) + 3
+        items = rand(100) + 50
         for i in 1..items
           p.playlist_items << PlaylistItem.new(:item_id => rand(100000000), :item_type_id => 1, :position => i)
         end 
