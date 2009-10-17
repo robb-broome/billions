@@ -8,6 +8,11 @@ class SvcPlaylist
       [200, {"Content-Type" => "text/html"}, [p.to_json]]
     elsif env["PATH_INFO"] =~ /^\/test/
       [200, {"Content-Type" => "text/html"}, ['tested']]
+    elsif env["PATH_INFO"] =~ /^\/header/
+      n = rand(100000000000)
+      p = Playlist.new(:title => "playlist load " + n.to_s, :user_id => rand(10000), :description => "Created at " + Time.now.to_s)
+      p.save
+      [200, {"Content-Type" => "text/html"}, [p.id.to_s]]
     elsif env["PATH_INFO"] =~ /^\/make/
       n = rand(100000000000)
       p = Playlist.new(:title => "playlist load " + n.to_s, :user_id => rand(10000), :description => "Created at " + Time.now.to_s)
