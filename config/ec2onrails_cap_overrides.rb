@@ -5,7 +5,7 @@ namespace :deploy do
     puts "restarting passenger!" 
     run "touch #{current_path}/tmp/restart.txt" 
     # run "sleep 30" # give the service 30 seconds to start before 
-attempting to monitor it 
+    # attempting to monitor it 
     # sudo "monit -g app monitor all" 
   end 
   desc "Overrides the default (and ec2onrails) Capistrano deploy:restart"
