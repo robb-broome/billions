@@ -27,9 +27,9 @@ Rails::Initializer.run do |config|
 
   # Skip frameworks you're not going to use. To use Rails without a database,
   # you must remove the Active Record framework.
-  config.frameworks -= [ :active_resource, :action_mailer ]
-  config.middleware.use(Rack::Cache, :verbose => true)
-  config.metals = ["SvcPlaylist"] 
+  # config.frameworks -= [ :active_resource, :action_mailer ]
+  # config.middleware.use(Rack::Cache, :verbose => true)
+  # config.metals = ["SvcPlaylist"] 
 
   # Activate observers that should always be running
   # config.active_record.observers = :cacher, :garbage_collector, :forum_observer
