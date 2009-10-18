@@ -30,11 +30,7 @@ class SvcPlaylist
   end
   ActiveRecord::Base.clear_active_connections!
 end
-
-100000, Average, 0.0232725698999999, TPS, 88.5661146045523
-total time 2327.25698999999 average 0.0232725698999999
-end at Sun Oct 18 07:39:07 -0700 2009
-
+ 
 
 class None < Object
   # This is for cuttin' and pastin' only!
