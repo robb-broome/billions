@@ -2,6 +2,8 @@ namespace :testdata do
   desc "create 40 million new playlists with between 5 and 50 items, or about 1bb paylist items "
   task (:create_playlists => :environment ) do 
     require 'populator'
+    count = 0
+    sTime = Time.now
     Playlist.populate(40_000_000) do |playlist|
         n = rand(10_000).to_s
         playlist.title = "mass populated " + n 
@@ -19,7 +21,10 @@ namespace :testdata do
           item.position = pos
           pos += 1 
         end 
+        count += 1
     end
+    puts "Created " + count.to_s " new playlists."
+    puts "Elapsed: " + (sTime - Time.now).to_s
   end
 end
 
