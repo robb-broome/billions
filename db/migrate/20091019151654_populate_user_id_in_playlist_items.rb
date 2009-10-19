@@ -1,6 +1,6 @@
 class PopulateUserIdInPlaylistItems < ActiveRecord::Migration
   def self.up
-    execute "update playlist_production.playlist_items i set i.user_id = ( select p.user_id from playlist_production.playlists p where p.id = i.playlist_id)"
+    execute "update playlist_items set user_id = ( select user_id from playlists  where id = playlist_id)"
   end
 
   def self.down
