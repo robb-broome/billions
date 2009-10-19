@@ -23,7 +23,7 @@ namespace :testdata do
         end 
         count += 1
     end
-    puts "Created " + count.to_s " new playlists."
+    puts "Created " + count.to_s + " new playlists."
     puts "Elapsed: " + (sTime - Time.now).to_s
   end
 end
