@@ -16,8 +16,7 @@ namespace :testdata do
         PlaylistItem.populate(5..50) do |item|
           item.playlist_id = playlist.id 
           item.item_id = 10_000..1_000_000
-          item.item_type = 1..5
-          item.user_id = playlist.user_id 
+          item.item_type_id = 1..5
           item.position = pos
           pos += 1 
         end 
