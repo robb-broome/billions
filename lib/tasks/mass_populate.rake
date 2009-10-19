@@ -14,7 +14,7 @@ namespace :testdata do
         playlist.status = [true, false]
         pos = 0
         PlaylistItem.populate(5..50) do |item|
-          item.playlist.id = playlist.id 
+          item.playlist_id = playlist.id 
           item.item_id = 10_000..1_000_000
           item.item_type = 1..5
           item.user_id = playlist.user_id 
