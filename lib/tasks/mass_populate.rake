@@ -6,7 +6,7 @@ namespace :testdata do
     sTime = Time.now
     Playlist.populate(40_000_000, :per_query => 100) do |playlist|
         n = rand(10_000).to_s
-        playlist.title = "mass populated " + populator.words(2) 
+        playlist.title = "mass populated " + Populator.words(2) 
         playlist.description = Populator.words(10..15)
         playlist.user_id = 1..100_000
         playlist.flags  = 1..500
