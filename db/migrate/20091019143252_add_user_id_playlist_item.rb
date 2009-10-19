@@ -1,4 +1,4 @@
-class AddUserIDPlaylistItem < ActiveRecord::Migration
+class AddUserIdPlaylistItem < ActiveRecord::Migration
   def self.up
     add_column :playlist_item, :user_id, :integer
   end
