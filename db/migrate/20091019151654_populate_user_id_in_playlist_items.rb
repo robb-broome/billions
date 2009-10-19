@@ -4,7 +4,6 @@ class PopulateUserIdInPlaylistItems < ActiveRecord::Migration
   end
 
   def self.down
-    # this isn't really irreversible, but this is an example.
-    raise ActiveRecord::IrreversibleMigration
+    execute "update playlist_items set user_id = null"
   end
 end
