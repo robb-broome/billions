@@ -7,9 +7,7 @@ set :scm, "git"
 set :deploy_via, :remote_cache
 set :repository, "git://github.com/robb-broome/billions.git"
 
-
-# tell me i'm passenger !
-
+set :keep_releases, 3
 
 # NOTE: for some reason Capistrano requires you to have both the public and
 # the private key in the same folder, the public key should have the 
