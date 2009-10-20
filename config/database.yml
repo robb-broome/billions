@@ -19,7 +19,13 @@ development:
   database: db/development.sqlite3
   pool: 5
   timeout: 5000
-
+# development:
+#   adapter: mysql
+#   database: playlist_development
+#   username: root
+#   password: 39169.rda
+#   socket: /tmp/mysql.sock
+  
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
