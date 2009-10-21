@@ -39,15 +39,17 @@ class SvcPlaylist
 
     elsif env["PATH_INFO"] =~ /^\/make/
       return   [403, {"Content-Type" => "text/html"}, ['done']] unless authenticated?(env)
-      n = rand(100000000000)
-      p = Playlist.new(:title => "playlist load " + n.to_s, :user_id => rand(10000), :description => "Created at " + Time.now.to_s)
+      # validate parameters 
+      request = Rack::Request.new(env)
+      params = request.params
+      p = Playlist.new(:title => params['title'], :description => params['desc'])
       p.save
-      items = rand(5) + 3
+      items = params['items'].to_i
       for i in 1..items
         p.playlist_items << PlaylistItem.new(:item_id => rand(100000000), :item_type_id => 1, :position => i)
         p.save
       end
-      [200, {"Content-Type" => "text/html"}, ['done']]
+      [201, {"Content-Type" => "text/html"}, ['created']]
 
 
     else
