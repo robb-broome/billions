@@ -15,7 +15,7 @@ class SvcPlaylist
       resp = {}
       resp[:one] =  params['param1'] == 1 ? 'yes' : 'no'
       resp[:two] =  params['param2'] == 2 ? 'yes' : 'no'
-      [200, {"Content-Type" => "text/html"}, [resp.to_json]]
+      [200, {"Content-Type" => "text/html"}, [sample_playlist(10)]]
 
     elsif env["PATH_INFO"] =~ /^\/header/
       n = rand(100000000000)
