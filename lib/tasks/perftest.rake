@@ -9,4 +9,4 @@ namespace :performance do
     puts "Done"
     puts "Duration " + (Time.now - sTime).to_s
   end
-end 
+end
