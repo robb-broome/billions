@@ -1,7 +1,7 @@
 namespace :mass do
 
   desc "create 40 million new playlists with between 5 and 50 items, or about 1bb paylist items "
-  task (:create_playlists => :environment ) do
+  task (:playlists => :environment ) do
     require 'populator'
     mk_playlists(:playlist_count => 40_000_000, :per_query => 1000, :items_per => (5..50))
   end
@@ -22,7 +22,6 @@ namespace :mass do
     logger.close
 
   end
-
 
   # supporting methods
   def mk_playlists(playlist_count=40_000_000, per_query=1000 items_per=5..50 )
