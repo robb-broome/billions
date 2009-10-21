@@ -5,10 +5,7 @@ class SvcPlaylist
   def self.call(env)
   
     if env["PATH_INFO"] =~ /^\/test/
-      # random = 1 # Time.now.to_f.to_s
-
       [200, {"Content-Type" => "text/html"}, [sample_playlist]]
-      
       
     elsif env["PATH_INFO"] =~ /^\/header/
       n = rand(100000000000)
