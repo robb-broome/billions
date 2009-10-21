@@ -13,11 +13,11 @@ class PlaylistsController < ApplicationController
   # GET /playlists/1
   # GET /playlists/1.xml
   def show
-    @playlist = Playlist.find(params[:id])
-
+    # @playlist = Playlist.find(params[:id])
+    @playlist = "{\"playlist\":{\"status\":true,\"flags\":0,\"updated_at\":\"2009-10-17T01:19:14Z\",\"favorite_count\":0,\"title\":\"playlist load 78661392779\",\"id\":100010,\"description\":\"Created at Fri Oct 16 18:19:14 -0700 2009\",\"user_id\":838,\"created_at\":\"2009-10-17T01:19:14Z\", \"random\":\"1\"}}"
     respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @playlist }
+      # format.html # show.html.erb
+      format.xml  { render :json => @playlist }
     end
   end
 
