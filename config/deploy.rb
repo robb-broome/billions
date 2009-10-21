@@ -4,8 +4,10 @@
 set :application, "playlist"
 
 set :scm, "git"
-set :deploy_via, :remote_cache
+# set :deploy_via, :remote_cache
 set :repository, "git@github.com:robb-broome/billions.git"
+set :deploy_via, :copy
+set :copy_cache, true
 
 set :keep_releases, 3
 
