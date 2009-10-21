@@ -7,7 +7,9 @@ class SvcPlaylist
       p = Playlist.all().first
       [200, {"Content-Type" => "text/html"}, [p.to_json]]
     elsif env["PATH_INFO"] =~ /^\/test/
-      [200, {"Content-Type" => "text/html"}, ['tested']]
+      random = Time.now.to_f.to_s
+      rtn = "{\"playlist\":{\"status\":true,\"flags\":0,\"updated_at\":\"2009-10-17T01:19:14Z\",\"favorite_count\":0,\"title\":\"playlist load 78661392779\",\"id\":100010,\"description\":\"Created at Fri Oct 16 18:19:14 -0700 2009\",\"user_id\":838,\"created_at\":\"2009-10-17T01:19:14Z\", \"random\":\"#{random}\"}}"
+      [200, {"Content-Type" => "text/html"}, [rtn]]
     elsif env["PATH_INFO"] =~ /^\/header/
       n = rand(100000000000)
       p = Playlist.new(:title => "playlist load " + n.to_s, :user_id => rand(10000), :description => "Created at " + Time.now.to_s)
