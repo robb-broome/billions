@@ -18,7 +18,7 @@ class SvcPlaylist
       [200, {"Content-Type" => "text/html"}, [sample_playlist(10)]]
 
 
-      elsif env["PATH_INFO"] =~ /^\/data_val_test/
+      elsif env["PATH_INFO"] =~ /^\/get_from_db/
         # validate parameters 
         request = Rack::Request.new(env)
         params = request.params
@@ -28,8 +28,6 @@ class SvcPlaylist
         
         p = Playlist.find rand(3000000) + 100000
         [200, {"Content-Type" => "text/html"}, [p.to_json]]
-      
-      
 
 
     elsif env["PATH_INFO"] =~ /^\/header/
