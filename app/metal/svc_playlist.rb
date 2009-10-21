@@ -17,6 +17,21 @@ class SvcPlaylist
       resp[:two] =  params['param2'] == 2 ? 'yes' : 'no'
       [200, {"Content-Type" => "text/html"}, [sample_playlist(10)]]
 
+
+      elsif env["PATH_INFO"] =~ /^\/data_val_test/
+        # validate parameters 
+        request = Rack::Request.new(env)
+        params = request.params
+        resp = {}
+        resp[:one] =  params['param1'] == 1 ? 'yes' : 'no'
+        resp[:two] =  params['param2'] == 2 ? 'yes' : 'no'
+        
+        p = Playlist.find rand(3000000) + 100000
+        [200, {"Content-Type" => "text/html"}, [p.to_json]]
+      
+      
+
+
     elsif env["PATH_INFO"] =~ /^\/header/
       n = rand(100000000000)
       p = Playlist.new(:title => "playlist load " + n.to_s, :user_id => rand(10000), :description => "Created at " + Time.now.to_s)
