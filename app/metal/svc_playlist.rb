@@ -42,11 +42,12 @@ class SvcPlaylist
       # validate parameters 
       request = Rack::Request.new(env)
       params = request.params
-      p = Playlist.new(:title => params['title'], :description => params['desc'])
+      user_id =  rand(1000000)
+      p = Playlist.new(:title => params['title'], :description => params['desc'], :user_id => user_id)
       p.save
       items = params['items'].to_i
       for i in 1..items
-        p.playlist_items << PlaylistItem.new(:item_id => rand(100000000), :item_type_id => 1, :position => i)
+        p.playlist_items << PlaylistItem.new(:item_id => rand(100000000), :item_type_id => 1, :position => i, :user_id => user_id)
         p.save
       end
       [201, {"Content-Type" => "text/html"}, ['created']]
