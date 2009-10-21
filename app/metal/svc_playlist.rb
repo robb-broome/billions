@@ -18,6 +18,7 @@ class SvcPlaylist
       
       
     elsif env["PATH_INFO"] =~ /^\/make/
+      return   [403, {"Content-Type" => "text/html"}, ['done']] unless authenticated?(env)
       n = rand(100000000000)
       p = Playlist.new(:title => "playlist load " + n.to_s, :user_id => rand(10000), :description => "Created at " + Time.now.to_s)
       p.save
@@ -57,4 +58,8 @@ class None < Object
       puts "Save a playlist with " + items.to_s + " items took " + (Time.now - start).to_f.to_s + " sec."
     end
   end
+  def authenticated?(env)
+    #stuff
+    nil
+  end 
 end
