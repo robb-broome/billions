@@ -28,7 +28,7 @@ namespace :mass do
     # make a whole playlist with items, or, if you say items_per = 0, just headers.
     sTime = Time.now
     playlist_count = item_count = 0
-    Playlist.populate(:playlist_count => playlist_count, :per_query => per_query) do |playlist|
+    Playlist.populate(playlist_count, :per_query => per_query) do |playlist|
       n = rand(10_000).to_s
       playlist.title = "mass populated " + Populator.words(2)
       playlist.description = Populator.words(10..15)
