@@ -1,14 +1,14 @@
 staging:
-  aws_access_key: AKIAIROTVAKBJZWJDRFA
-  aws_secret_access_key: Im4saOEELcfwO2Cjqjp99FybgyILtD6n4kWYplGU
+  aws_access_key: hidden
+  aws_secret_access_key: hidden
   bucket_base_name: yourbucket
 
 production:
-  aws_access_key: AKIAIROTVAKBJZWJDRFA
-  aws_secret_access_key: Im4saOEELcfwO2Cjqjp99FybgyILtD6n4kWYplGU
+  aws_access_key: hidden
+  aws_secret_access_key: hidden
   bucket_base_name: playlist
 
 development:
-  aws_access_key: AKIAIROTVAKBJZWJDRFA
-  aws_secret_access_key: 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
+  aws_access_key: hidden
+  aws_secret_access_key: hidden
   bucket_base_name: playlist
